@@ -30,8 +30,8 @@ def extension_login(email,password):
 
     logging.info("Load Chrome driver")
     # browser = webdriver.Chrome(executable_path="chromedriver.exe", options=chrome_options)
-    browser = webdriver.Chrome(executable_path=ChromeDriverManager().install(), options=chrome_options)
-
+    # browser = webdriver.Chrome(executable_path=ChromeDriverManager().install(), options=chrome_options)
+    browser = webdriver.Chrome(options=chrome_options)
     # 设置全局的隐式等待(直到找到元素),20秒后找不到抛出找不到元素
     browser.implicitly_wait(20)
 
