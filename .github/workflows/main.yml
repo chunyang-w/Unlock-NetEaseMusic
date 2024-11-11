@@ -17,9 +17,9 @@ jobs:
       run: |
         brew update
         brew install chromedriver
-    - name: Grant permission
-      run: |
-        xattr -d com.apple.quarantine /opt/homebrew/bin/chromedriver
+    # - name: Grant permission
+    #   run: |
+    #     xattr -d com.apple.quarantine /opt/homebrew/bin/chromedriver
     - name: Install python packages
       run: |
         python -m pip install --upgrade pip
