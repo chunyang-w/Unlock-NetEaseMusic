@@ -12,7 +12,6 @@ from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.chrome.service import Service as ChromeService
 from selenium.webdriver.support.ui import WebDriverWait
 
-WebDriverWait(browser, 10).until(EC.presence_of_element_located((By.ID, "some-element-id")))
 
 @retry(wait_random_min=5000, wait_random_max=10000, stop_max_attempt_number=3)
 def enter_iframe(browser):
@@ -36,6 +35,7 @@ def extension_login(email,password):
     # browser = webdriver.Chrome(executable_path="chromedriver.exe", options=chrome_options)
     # browser = webdriver.Chrome(executable_path=ChromeDriverManager().install(), options=chrome_options)
     browser = webdriver.Chrome(options=chrome_options)
+    WebDriverWait(browser, 10).until(EC.presence_of_element_located((By.ID, "some-element-id")))
     # 设置全局的隐式等待(直到找到元素),20秒后找不到抛出找不到元素
     browser.implicitly_wait(20)
 
