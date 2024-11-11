@@ -21,7 +21,7 @@ def enter_iframe(browser):
     return browser
 
 # 失败后随机 1-3s 后重试，最多 3 次
-@retry(wait_random_min=1000, wait_random_max=3000, stop_max_attempt_number=5)
+@retry(wait_random_min=1000, wait_random_max=3000, stop_max_attempt_number=1)
 def extension_login(email,password):
     chrome_options = webdriver.ChromeOptions()
 
